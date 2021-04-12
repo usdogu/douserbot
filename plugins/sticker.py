@@ -10,7 +10,6 @@ async def stik(client:Client, message:Message):
     
     yanit_id  = await yanitlanan_mesaj(message)
     ilk_mesaj = await message.edit("__Bekleyin..__", disable_web_page_preview = True)
-    #------------------------------------------------------------- Başlangıç >
     cevaplanan_mesaj = message.reply_to_message
 
     if cevaplanan_mesaj is None:

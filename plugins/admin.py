@@ -31,3 +31,25 @@ def GetUserMentionable(user: User):
 async def mute(client: Client, message: Message):
     await message.edit_text("Muteleniyor...")
     await client.restrict_chat_member(message.chat.id,message.reply_to_message.from_user.id,ChatPermissions())
+
+@Client.on_message(filters.command("purge", ".") & filters.me)
+async def purge(client: Client, message: Message):
+    silinecek_mesaj_idleri = []
+    silinen_mesaj_sayisi   = 0
+    for gecerli_mesaj_id in range(message.reply_to_message.message_id, message.message_id):
+        silinecek_mesaj_idleri.append(gecerli_mesaj_id)
+        if len(silinecek_mesaj_idleri) == 100:
+            await client.delete_messages(
+                message.chat.id,
+                silinecek_mesaj_idleri,
+                True
+            )
+            silinen_mesaj_sayisi  += len(silinecek_mesaj_idleri)
+            silinecek_mesaj_idleri = []
+    if silinecek_mesaj_idleri:
+        await client.delete_messages(
+            message.chat.id,
+            silinecek_mesaj_idleri,
+            True
+        )
+    await message.edit_text(f"`<u>{silinen_mesaj_sayisi}</u> Adet Mesaj Silindi..`")
