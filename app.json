@@ -1,0 +1,17 @@
+{
+    "name": "Douserbot",
+    "description": "Kişisel Kullanım İçin Userbot",
+    "keywords": [
+        "userbot"
+    ],
+    "repository": "https://github.com/usdogu/douserbot",
+    "env": {
+        "STRING_SESSION": {
+            "description": "Telegrama Bağlanmak İçin Gerekli Olan Session. python3 StringSessionOlustur İle Bu Değeri Alın",
+            "required": true
+        }
+    },
+    "buildpacks": [{
+        "url": "heroku/python"
+    }]
+}

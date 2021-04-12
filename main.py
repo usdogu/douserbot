@@ -1,4 +1,5 @@
 from pyrogram import Client
-import ini
-ini_file = ini.parse(open("config.ini").read())
-Client(ini_file["pyrogram"]["string_session"],plugins=dict(root="plugins")).run()
+from os import environ
+
+string_session = environ.get("STRING_SESSSION")
+Client(string_session,plugins=dict(root="plugins")).run()
