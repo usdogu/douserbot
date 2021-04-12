@@ -1,5 +1,4 @@
 aiohttp==3.7.4.post0
 ini_parser==1.2.0
 Pyrogram==1.2.8
-ini==0.1
 KekikSpatula==0.4.3
