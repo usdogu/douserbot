@@ -9,6 +9,14 @@
         "STRING_SESSION": {
             "description": "Telegrama Bağlanmak İçin Gerekli Olan Session. python3 StringSessionOlustur İle Bu Değeri Alın",
             "required": true
+        },
+        "API_ID": {
+            "description": "my.telegram.org Adresinden Alınan API ID",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "my.telegram.org Adresinden Alınan API HASH",
+            "required": true
         }
     },
     "buildpacks": [{
