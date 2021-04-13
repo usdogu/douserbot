@@ -2,3 +2,4 @@ aiohttp==3.7.4.post0
 ini_parser==1.2.0
 Pyrogram==1.2.8
 KekikSpatula==0.4.3
+TgCrypto==1.2.2
