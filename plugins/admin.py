@@ -52,4 +52,5 @@ async def purge(client: Client, message: Message):
             silinecek_mesaj_idleri,
             True
         )
+        silinen_mesaj_sayisi  += len(silinecek_mesaj_idleri)
     await message.edit_text(f"`<u>{silinen_mesaj_sayisi}</u> Adet Mesaj Silindi..`")
